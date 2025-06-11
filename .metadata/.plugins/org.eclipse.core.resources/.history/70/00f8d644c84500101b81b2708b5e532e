@@ -1,0 +1,71 @@
+package com.example.demo.Controllers;
+
+import java.util.ArrayList;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.ModelorEntity.Employee;
+
+@RestController
+public class MyContoler {
+	ArrayList<Employee> emp = new ArrayList<Employee>();
+	MyContoler(){
+		  emp.add(new Employee(1, "John", 30, 50000, "Developer"));
+	      emp.add(new Employee(2, "Jane", 28, 60000, "Tester"));
+	      emp.add(new Employee(3, "Modi", 78, 90000, "PM"));
+	}
+	@GetMapping("/getEmployee")
+	public ArrayList<Employee> allemp() {
+		
+		return emp;
+	}
+	@GetMapping("/getEmployee/{id}")
+	public Employee allempbyid(@PathVariable int id) {
+		for (Employee e : emp) {
+	         if (e.getId() == id) {
+	             return e;
+	         }
+	     }
+	     return null; // or return a custom message or throw exception if needed
+	}
+	@PostMapping("/addEmployee")
+	public String addEmployee(@RequestBody Employee employee) {
+		emp.add(employee);
+		return "E mployee added succfully....!";
+	}
+	 @DeleteMapping("/deleteEmployee/{id}")
+	 public String deleteEmployeeById(@PathVariable int id) {
+	     for (Employee e : emp) {
+	         if (e.getId() == id) {
+	             emp.remove(e);
+	             return "Employee with ID " + id + " deleted successfully!";
+	         }
+	     }
+	     return "Employee with ID " + id + " not found!";
+	 }	
+	 
+	 
+	@GetMapping("/getEmployee/{id}")
+	public ResponseEntity<?> getEmployeeById(@PathVariable int id) {
+	    for (Employee e : emp) {
+	        if (e.getId() == id) {
+	            return ResponseEntity.ok(e); // 200 OK with employee data
+	        }
+	    }
+
+	    // If not found, return 404 with a message
+	    return ResponseEntity
+	            .status(HttpStatus.NOT_FOUND)
+	            .body("Employee with ID " + id + " not found"); //404
+	}
+	
+	
+	
+}

@@ -1,0 +1,14 @@
+package com.example.demo.Repos;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface MyRepo extends JpaRepository<T, ID>{
+//
+//	// select * from employyee 					find()
+//	// select * from employee where   i d=  ? 	findById()
+//	update employee set slary = > where = ? 	update()
+//	delete from employee ;						deleteALl()
+//	delete from employee where id =  ? 			deletById()
+//			
+}
