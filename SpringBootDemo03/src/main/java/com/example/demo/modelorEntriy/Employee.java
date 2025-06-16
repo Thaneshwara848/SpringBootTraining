@@ -1,7 +1,4 @@
 package com.example.demo.modelorEntriy;
-
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Max;
