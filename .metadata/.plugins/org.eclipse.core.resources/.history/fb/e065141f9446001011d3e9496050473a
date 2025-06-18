@@ -1,9 +1,0 @@
-package com.example.demo.Exceptions;
-
-public class GlobalExceptionHandler {
-	
-	@ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<String> handleEmployeeNotFound(EmployeeNotFoundException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
-    }
-}

@@ -71,6 +71,10 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\THANESH\OneDrive\Desktop\Trainig\With_Rest_template\CouponService-1"/>
+			<item value="C:\Users\THANESH\OneDrive\Desktop\Trainig\With_Rest_template\ProductService-1"/>
+			<item value="C:\Users\THANESH\OneDrive\Desktop\Trainig\Springcommunication3"/>
+			<item value="C:\Users\THANESH\OneDrive\Desktop\Trainig\Springcommunication1"/>
 			<item value="C:\Users\THANESH\OneDrive\Desktop\Trainig\spring-boot-jwt-without-JPA\spring-boot-jwt"/>
 			<item value="C:\Users\THANESH\OneDrive\Desktop\Trainig\Capgemini\SpringSecurityDemo8"/>
 			<item value="C:\Users\THANESH\OneDrive\Desktop\FullStackWithJwt\Angular18WithJwtTokenIntegrateWithSpringBootRestApi\backend-code\property-booking-app"/>
