@@ -20,8 +20,8 @@ import com.example.demo.services.MyServices;
 @RestController
 public class MyController {
 	
-	@Autowired
-	private MyServices service;
+		@Autowired
+		private MyServices service;
 	
 		@GetMapping("/getAllEmployee")
 	    public List<Employee> getAllEmployee() {
@@ -37,17 +37,6 @@ public class MyController {
 	    public String addEmployee(@RequestBody Employee employee) {
 	        return service.addEmployee(employee);
 	    }
-
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
 	    
 	    @PutMapping("/updateEmployee/{id}")
 	    public String updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmployee) {
